@@ -4,16 +4,17 @@
 using namespace std;
 
 int main() {
-    map<string, string> patients;
+    map<string, int> patients;
     string input;
     int i = 0;
     while (getline(cin, input)) {
         if (input == "Next") {
             auto item = patients.begin();
-            cout << item->second << endl;
-            patients.erase(patients.begin());
+            cout << item->first << endl;
+            if (--item->second == 0) patients.erase(patients.begin());
         } else {
-            patients.insert(make_pair(input + to_string(i), input));
+            if (patients.find(input) == patients.end()) patients.insert(make_pair(input, 1));
+            else patients[input]++;
         }
         i++;
     }
