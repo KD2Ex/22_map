@@ -24,6 +24,8 @@ bool isAnagram(string str1, string str2) {
 int main() {
     string str1;
     string str2;
+
+    cout << "Enter two words\n";
     cin >> str1 >> str2;
 
     cout << isAnagram(str1, str2);

@@ -24,6 +24,7 @@ int main() {
     phoneName.insert(make_pair<string, string>("69-72-31", "Ivanov"));
     namePhones["Ivanov"].push_back("69-72-31");
 
+    cout << "Enter the request\n";
 
     getline(cin, request);
 
